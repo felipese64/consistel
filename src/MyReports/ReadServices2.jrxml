@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReadProducts2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="0" whenResourceMissingType="Error" uuid="144e00b9-8728-4e15-b875-6ca15e94d42f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="consistel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select s.id_serv as ID, s.nome_serv as Nome, sum(ors.quantidade) as Quant, s.preco_serv as 'Preço Unit.', (s.preco_serv * sum(ors.quantidade)) as 'Preço Total' from tbos join os_recebe_servico ors on tbos.id_os = ors.id_os join tbservicos s on s.id_serv = ors.id_serv where tbos.id_os = $P{ID} group by s.id_serv;]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbservicos"/>
+	</field>
+	<field name="Nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbservicos"/>
+	</field>
+	<field name="Quant" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Quant"/>
+	</field>
+	<field name="Preço Unit." class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Preço Unit."/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbservicos"/>
+	</field>
+	<field name="Preço Total" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="Preço Total"/>
+	</field>
+	<variable name="FORMATPRECOUNIT" class="java.lang.String">
+		<variableExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{Preço Unit.})]]></variableExpression>
+	</variable>
+	<variable name="FORMATPRECOTOT" class="java.lang.String">
+		<variableExpression><![CDATA[new DecimalFormat("#,##0.00").format($F{Preço Total})]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="300" height="30" uuid="bc5a93d9-3cdf-4f8f-92c1-a9e3621324b5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bef97e52-6d75-4548-86f5-9b3fc2cd7261"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="30" width="53" height="30" uuid="433f8fac-edcb-4934-9114-04c6fa2cebcf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="473775df-f38b-401f-82be-8e393e2a406c"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<text><![CDATA[QUANT.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="353" y="30" width="98" height="30" uuid="b5eb4bd7-b628-40e2-9d93-83e773caf828">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4158657-c770-4fc7-90a8-8c8305f73a56"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[PREÇO UNIT (R$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="30" width="102" height="30" uuid="bc6bf1e1-4e8d-4dae-bdcc-2e0cfbca68c4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="16a75cf9-ffc2-43df-ae0e-cd2c06b79ef3"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="8"/>
+				</textElement>
+				<text><![CDATA[PREÇO TOTAL (R$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="552" height="20" uuid="6ccc5dbe-3545-4595-b1d8-e147a716f427"/>
+				<box padding="0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="16" isBold="false"/>
+					<paragraph leftIndent="238"/>
+				</textElement>
+				<text><![CDATA[SERVIÇOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="-4" width="300" height="18" uuid="942c0cfd-2c19-45e3-8e43-da5dd7f7be95">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bef97e52-6d75-4548-86f5-9b3fc2cd7261"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph lineSpacingSize="0.0" leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="-4" width="53" height="18" uuid="eb781de7-382e-4c68-8013-b9f23944cb68">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="473775df-f38b-401f-82be-8e393e2a406c"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Quant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="-4" width="98" height="18" uuid="19fcf0e4-7839-4b57-ab04-43b6bc88cddd"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="10" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{FORMATPRECOUNIT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="-4" width="102" height="18" uuid="4c09eec4-6fa2-4c58-884a-bf7c44d95ba4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="8" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{FORMATPRECOTOT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

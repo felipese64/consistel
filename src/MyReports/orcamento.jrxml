@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="os" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cb9c302-23bb-4bba-9478-342848b256bf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="consistel"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="os" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select os.id_os, os.data_os, os.atendimento_os, os.tipo_os, os.status_os, os.relato_os, os.solucao_os, os.tecnico, os.condicoes_avista_os, os.condicoes_aprazo_os, cl.nomecli, cl.endcli, cl.telcli, cl.celcli, cl.bairrocli from tbos os join tbclientes cl on os.idcli = cl.idcli where os.id_os = $P{os};]]>
+	</queryString>
+	<field name="id_os" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="id_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="data_os" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="data_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="atendimento_os" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="atendimento_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="tipo_os" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="status_os" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="status_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="relato_os" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="relato_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="solucao_os" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="solucao_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="tecnico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tecnico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="condicoes_avista_os" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="condicoes_avista_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="condicoes_aprazo_os" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="condicoes_aprazo_os"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbos"/>
+	</field>
+	<field name="nomecli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomecli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbclientes"/>
+	</field>
+	<field name="endcli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="endcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbclientes"/>
+	</field>
+	<field name="telcli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbclientes"/>
+	</field>
+	<field name="celcli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="celcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbclientes"/>
+	</field>
+	<field name="bairrocli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bairrocli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tbclientes"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="105" height="30" uuid="bce7b225-6fea-4ff2-a921-6332c54f45af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a3ca72b-fc8e-4476-a030-2bd79dff9a81"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORÇAMENTO nº:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="105" y="0" width="55" height="30" uuid="685ea187-41a2-4b97-87b3-569e464354c7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5a3ca72b-fc8e-4476-a030-2bd79dff9a81"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_os}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="499" y="0" width="50" height="20" uuid="4a35f5d5-dcc3-4703-b9ef-4591824c140d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0a5df31f-8a16-4bb3-a166-059590ce7b42"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yy").format($F{data_os})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="399" y="0" width="100" height="20" uuid="732b4b99-473d-4e70-955a-6f57ed16440d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0a5df31f-8a16-4bb3-a166-059590ce7b42"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de emissão:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="185" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<staticText>
+				<reportElement x="0" y="90" width="48" height="20" uuid="2b21c7ce-84db-4260-8f45-c2592665ec62">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="42a42152-8057-4cba-a8d9-e56acf38b4e5"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="48" y="90" width="500" height="20" uuid="5939e351-f8b3-497b-87b7-565f8073a9b6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="42a42152-8057-4cba-a8d9-e56acf38b4e5"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomecli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="60" height="20" uuid="1bd2ff94-9af1-49ce-a0f9-5d2ea7781dc9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b8b0c9d0-f969-46cf-92bb-a7ac17172ff6"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="110" width="488" height="20" uuid="f740b2b4-733f-41e3-8a95-0ba5c620e216">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b8b0c9d0-f969-46cf-92bb-a7ac17172ff6"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="0" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endcli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="130" width="28" height="20" uuid="4edd59f0-91f7-438f-b664-684bff160d81">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad8fa2ea-8334-4116-b2bc-148ddb86c60c"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="28" y="130" width="251" height="20" uuid="0567836e-3070-4963-81ca-a7b1c927b2f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad8fa2ea-8334-4116-b2bc-148ddb86c60c"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telcli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="130" width="29" height="20" uuid="17b92d32-af3c-4db3-8ad2-1e26f77aa89b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d26a47b3-2303-4c6c-a9b8-8ea6a2d8f69e"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Cel:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="308" y="130" width="240" height="20" uuid="f7448af2-4034-4bbb-ab20-8d01e5ff1ed9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d26a47b3-2303-4c6c-a9b8-8ea6a2d8f69e"/>
+				</reportElement>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{celcli}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="279" height="90" uuid="01a0a4c3-883a-435b-8209-0c89da7f07b6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="34" isBold="false"/>
+					<paragraph leftIndent="14"/>
+				</textElement>
+				<text><![CDATA[FELIPE SIMÕES ECKERT - MEI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="269" height="90" uuid="91bed341-ad2e-4556-9440-28640773b6b6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph firstLineIndent="0" leftIndent="5" spacingBefore="3"/>
+				</textElement>
+				<text><![CDATA[Rua Theotônio Rosa Pires 10
+CEP: 79.004-340
+Campo Grande - MS
+Fone/Fax: (67) 3321-6265
+CNPJ: 13.160.806/000199
+Inscrição Estadual: 28.363.551-7
+]]></text>
+			</staticText>
+		</band>
+		<band height="23">
+			<subreport>
+				<reportElement x="-20" y="0" width="555" height="20" uuid="ee30e7f9-e10a-40c3-a76e-174c80006b10"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["ReadProducts2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="20"/>
+		<band height="39">
+			<subreport>
+				<reportElement x="-20" y="-10" width="544" height="31" uuid="34c00e68-abdb-4835-adcd-57f14db4974c"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["ReadServices2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="69">
+			<subreport>
+				<reportElement x="460" y="20" width="115" height="20" uuid="db071da4-2e6a-4efc-bb13-2b574d36365b"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["TotalServices.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="460" y="40" width="114" height="20" uuid="4cd84341-4887-4ad8-9931-9a7de02dd304"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Soma Total Final.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="460" y="0" width="114" height="20" uuid="b1d5c5ca-1c80-42ec-b00f-d9308dde1132"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["TotalProducts.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="323" y="20" width="120" height="20" uuid="5b93a32c-ac8a-4871-b8ed-31bcb74f1af6"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR SERVIÇOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="0" width="120" height="20" uuid="ee770a2e-c5ca-46ab-a30e-fa77dd100718"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR PRODUTOS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="40" width="120" height="20" uuid="8fe616b2-f934-4c1d-95f5-3a442f5e19c8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="35" y="20" width="288" height="48" uuid="c5828a6a-b320-4cdb-94b5-47c75b339b8d"/>
+				<subreportParameter name="ID">
+					<subreportParameterExpression><![CDATA[$F{id_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AV">
+					<subreportParameterExpression><![CDATA[$F{condicoes_avista_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AP">
+					<subreportParameterExpression><![CDATA[$F{condicoes_aprazo_os}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Soma Total.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="20" y="0" width="220" height="20" uuid="09f4544f-489b-4157-9637-ff4d458dd7fe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONDIÇÕES DE PAGAMENTO]]></text>
+			</staticText>
+		</band>
+		<band height="99"/>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
